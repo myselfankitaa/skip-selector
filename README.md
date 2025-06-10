@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# skip-selector
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React UI for selecting skip sizes with dynamic pricing and slider display
 
-## Available Scripts
+## How to run
 
-In the project directory, you can run:
+npm install (to install the dependencies)
+npm start (To run the project)
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React
+- react-slick (for slider)-
+- slick-carousel (slider CSS)
+- CSS Modules (custom styling)
+- JSON file for skip data
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## How I Built This App
 
-### `npm test`
+The goal was to display a set of skip sizes that users can browse and select, with pricing and details shown clearly. To mke it completely different from the original project, I used slider display by using slick-carousel.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Component Structure
 
-### `npm run build`
+1. App.js – Main Logic & State Handler
+   -Holds the skip data, imported from skipData.json.
+   -Maintains the state of the selected skip using hook useState.
+   -Renders a list of SkipCard components in a horizontal slider.
+   -Shows the footer section displaying selected skip details and final price.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. SkipCard.js – Individual Skip Cards
+   Each skip card shows:
+   -An image of the skip (container.jpg)
+   -Size in yards
+   -Hire period
+   -Price (with VAT calculated)
+   -A warning if not allowed on road
+   -Button to select (which toggle between selected and select this skip, which was possible by handle click function using conditional rendering)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Footer
+   -I calculated the footer with the price before vat + vat and optional rendering if the skip is selected.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How the Slider Was Implemented
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I used the react-slick library, a popular and flexible React component for carousels.
+In slider setting, slidestoshow :3 or 4 as per requirement, it is responsible for how many grid image can be shown at once.
+slidesToScroll : 1 or 3 as per requirement, it can show and change the slide while sliding, how many you want to change on the screen.
