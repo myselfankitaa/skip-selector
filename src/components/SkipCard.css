@@ -1,0 +1,72 @@
+.skip-card {
+  width: 90%;
+  margin: auto;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 16px;
+  background: #f8f7f7;
+  color: black;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.skip-card.selected {
+  border-color: transparent;
+  background: #9db9bb;
+  color: white;
+}
+
+.image-placeholder {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 66.66%;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+}
+
+.container-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.size-tag {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.warning {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  color: orange;
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.select-btn {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #5378a9;
+  color: white;
+  border: none;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
